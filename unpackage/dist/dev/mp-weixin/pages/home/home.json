@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "主页",
+  "navigationStyle": "custom",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "text-tab-bar": "/components/text-tab-bar/text-tab-bar"
+  }
+}

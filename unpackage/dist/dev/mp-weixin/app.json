@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/main/main",
+    "pages/home/home",
+    "pages/index/index",
+    "pages/order/order"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "茶饮店",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#f5f5f5"
+  },
+  "usingComponents": {
+    "text-tab-bar": "/components/text-tab-bar/text-tab-bar"
+  }
+}

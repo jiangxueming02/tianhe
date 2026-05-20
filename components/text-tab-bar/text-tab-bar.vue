@@ -1,0 +1,146 @@
+<template>
+  <view class="tab-bar">
+    <view class="tab-item" :class="{ active: current === 'index' }" @tap="go('index')">
+      <view class="tab-icon tab-icon-menu"></view>
+      <text class="tab-label">点单</text>
+    </view>
+    <view class="tab-item tab-logo-wrap" :class="{ active: current === 'home' }" @tap="go('home')">
+      <image class="tab-logo" src="/static/logo1.png" mode="aspectFit" />
+    </view>
+    <view class="tab-item" :class="{ active: current === 'order' }" @tap="go('order')">
+      <view class="tab-icon tab-icon-order"></view>
+      <text class="tab-label">订单</text>
+    </view>
+  </view>
+</template>
+
+<script>
+export default {
+  name: "TextTabBar",
+  props: {
+    current: {
+      type: String,
+      default: "home"
+    },
+    eventMode: {
+      type: Boolean,
+      default: false
+    }
+  },
+  methods: {
+    go(name) {
+      if (this.eventMode) {
+        this.$emit("tabchange", name);
+        return;
+      }
+      const map = { home: "/pages/home/home", index: "/pages/index/index", order: "/pages/order/order" };
+      const url = map[name];
+      if (!url) return;
+      const pages = getCurrentPages();
+      const route = pages.length ? "/" + pages[pages.length - 1].route : "";
+      if (route === url) return;
+      uni.reLaunch({ url });
+    }
+  }
+};
+</script>
+
+<style scoped>
+.tab-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100rpx;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(24rpx);
+  -webkit-backdrop-filter: blur(24rpx);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+  border-top: none;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+
+.tab-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4rpx;
+  padding: 6rpx 0;
+  position: relative;
+  transition: color 0.2s ease;
+  max-width: 140rpx;
+}
+
+.tab-icon {
+  width: 44rpx;
+  height: 44rpx;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.35;
+  transition: opacity 0.2s ease;
+}
+
+.tab-icon-menu {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232c2c2c'%3E%3Cpath d='M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z'/%3E%3C/svg%3E");
+}
+
+.tab-icon-order {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232c2c2c'%3E%3Cpath d='M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h10v2H7v-2zm0 4h6v2H7v-2zm0-8h10v2H7V6z'/%3E%3C/svg%3E");
+}
+
+.tab-label {
+  font-size: 20rpx;
+  color: #8c8c8c;
+  font-weight: 400;
+  transition: color 0.2s ease;
+}
+
+/* 选中态：朱砂红 */
+.tab-item.active .tab-icon {
+  opacity: 1;
+}
+.tab-item.active .tab-icon-menu {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23b8272b'%3E%3Cpath d='M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z'/%3E%3C/svg%3E");
+}
+.tab-item.active .tab-icon-order {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23b8272b'%3E%3Cpath d='M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h10v2H7v-2zm0 4h6v2H7v-2zm0-8h10v2H7V6z'/%3E%3C/svg%3E");
+}
+.tab-item.active .tab-label {
+  color: #b8272b;
+  font-weight: 500;
+}
+
+/* 中间 Logo 特殊处理 */
+.tab-logo-wrap {
+  flex: 0 0 auto;
+  position: relative;
+  top: -16rpx;
+  z-index: 2;
+}
+
+.tab-logo {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 50%;
+  opacity: 0.9;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4rpx 16rpx rgba(184, 39, 43, 0.15);
+  border: 3rpx solid #ffffff;
+}
+
+.tab-logo-wrap.active .tab-logo {
+  opacity: 1;
+  transform: scale(1.08);
+  box-shadow: 0 6rpx 24rpx rgba(184, 39, 43, 0.3);
+}
+</style>

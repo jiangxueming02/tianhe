@@ -1,0 +1,49 @@
+// ==============================
+// 天和五行 - 设计系统 v2
+// 灵感：霸王茶姬 · 东方美学
+// ==============================
+
+// 主色 - 朱砂红（霸王茶姬标志性色彩）
+$brand-red: #b8272b;
+$brand-red-light: #fff0f0;
+$brand-red-dark: #8a1c1f;
+$brand-red-gradient: linear-gradient(135deg, #b8272b 0%, #d43f42 100%);
+
+// 辅助色 - 鎏金
+$gold: #c9a96e;
+$gold-light: #f5ecdc;
+$gold-dark: #a8884a;
+
+// 背景色 - 暖白米色系
+$bg-body: #f5f0eb;
+$bg-card: #ffffff;
+$bg-warm: #fdfaf7;
+$bg-cream: #faf6f0;
+
+// 装饰色 - 檀棕色
+$wood: #d4c5b5;
+$wood-light: #ede5dc;
+$wood-dark: #b8a692;
+
+// 文字色
+$text-primary: #1a1a1a;
+$text-secondary: #8c8c8c;
+$text-light: #bfbfbf;
+$text-white: #ffffff;
+
+// 阴影
+$shadow-sm: 0 2rpx 8rpx rgba(0, 0, 0, 0.04);
+$shadow-md: 0 4rpx 16rpx rgba(0, 0, 0, 0.06);
+$shadow-lg: 0 8rpx 32rpx rgba(0, 0, 0, 0.08);
+$shadow-xl: 0 16rpx 48rpx rgba(0, 0, 0, 0.12);
+
+// 圆角
+$radius-sm: 8rpx;
+$radius-md: 14rpx;
+$radius-lg: 20rpx;
+$radius-xl: 28rpx;
+$radius-round: 50%;
+
+// 字体
+$font-cn: "PingFang SC", "Microsoft YaHei", -apple-system, sans-serif;
+$font-serif: "Noto Serif SC", "Source Han Serif SC", serif;
