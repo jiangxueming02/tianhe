@@ -213,7 +213,7 @@ export default {
         }
       ],
       nearbyGoods: [
-        { id: "zb1", name: "餐具", price: "￥9", image: "/static/zb-cutlery.png" },
+        { id: "zb1", name: "茶盘", price: "￥9", image: "/static/zb-cutlery.png" },
         { id: "zb2", name: "茶杯", price: "￥29", image: "/static/zb-teacup.png" },
         { id: "zb3", name: "香薰", price: "￥39", image: "/static/zb-aroma.png" },
         { id: "zb4", name: "马克杯", price: "￥49", image: "/static/zb-mug.png" },
