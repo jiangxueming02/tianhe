@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "天和五行",
+  "navigationStyle": "custom",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "text-tab-bar": "/components/text-tab-bar/text-tab-bar",
+    "tab-home": "/pages/home/home",
+    "tab-index": "/pages/index/index",
+    "tab-order": "/pages/order/order"
+  }
+}

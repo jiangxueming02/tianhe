@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "点单",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "text-tab-bar": "/components/text-tab-bar/text-tab-bar"
+  }
+}
