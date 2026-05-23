@@ -400,7 +400,7 @@ var _default = {
       }],
       nearbyGoods: [{
         id: "zb1",
-        name: "餐具",
+        name: "茶盘",
         price: "￥9",
         image: "/static/zb-cutlery.png"
       }, {
@@ -443,6 +443,11 @@ var _default = {
         name: "魔术贴",
         price: "￥9.9",
         image: "/static/moshutie.png"
+      }, {
+        id: "zb10",
+        name: "抱枕",
+        price: "￥29.9",
+        image: "/static/baozhen.png"
       }],
       cartMap: {},
       showCartDetail: false

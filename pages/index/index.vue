@@ -221,7 +221,8 @@ export default {
         { id: "zb6", name: "眼罩", price: "￥19", image: "/static/zb-eye-mask.png" },
         { id: "zb7", name: "短袖 T 恤", price: "￥89", image: "/static/duanxiu.png" },
         { id: "zb8", name: "钥匙扣", price: "￥9.9", image: "/static/yaoshikou.png" },
-        { id: "zb9", name: "魔术贴", price: "￥9.9", image: "/static/moshutie.png" }
+        { id: "zb9", name: "魔术贴", price: "￥9.9", image: "/static/moshutie.png" },
+		{ id: "zb10", name: "抱枕", price: "￥29.9", image: "/static/baozhen.png" }
       ],
       cartMap: {},
       showCartDetail: false
